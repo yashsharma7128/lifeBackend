@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
     'api',
+
 ]
 
 MIDDLEWARE = [
@@ -41,7 +42,10 @@ DATABASES = {
         'NAME': os.environ.get('MONGO_DB', 'lifecare_db'),
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': os.environ.get('MONGO_URI', 'mongodb+srv://yashsharmagtropy:yash%402001@cluster0.4wxsod3.mongodb.net/'),
+            'host': os.environ.get(
+                'MONGO_URI',
+                'mongodb+srv://yashsharmagtropy:yash%402001@cluster0.4wxsod3.mongodb.net/lifecare_db?retryWrites=true&w=majority'
+            ),
         }
     }
 }
